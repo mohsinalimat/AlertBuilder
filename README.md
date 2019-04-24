@@ -71,8 +71,7 @@ if let view = alertViewBuilder.getView(viewWithTag: 134) as? AlertSubMessageView
 ## Install
 
 ```ruby
-Drag and drop the 'Sources' folder to your project.
-// pod 'AlertViewBuilder' You shouldn't use this line for now.
+pod 'AlertViewBuilder' 
 ```
 ## License
 
