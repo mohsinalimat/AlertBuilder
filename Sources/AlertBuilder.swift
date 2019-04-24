@@ -93,7 +93,10 @@ public class AlertViewBuilder {
         self.stackView.removeFromSuperview()
         self.scrollView.addSubview(self.stackView)
         
-        let window = UIApplication.shared.windows[0]
+        guard let window = UIApplication.shared.keyWindow else{
+            print("UIApplication.shared.keyWindow is nil")
+            return
+        }
         
         var heightOfScreen = UIScreen.main.bounds.height
         if #available(iOS 11.0, *) {
@@ -168,6 +171,7 @@ public class AlertViewBuilder {
         build(self)
         
         guard let window = UIApplication.shared.keyWindow else{
+            print("UIApplication.shared.keyWindow is nil")
             return
         }
         
@@ -245,6 +249,7 @@ public class AlertViewBuilder {
     
     public func closeAlertView(){
         guard let window = UIApplication.shared.keyWindow else{
+            print("UIApplication.shared.keyWindow is nil")
             return
         }
         
