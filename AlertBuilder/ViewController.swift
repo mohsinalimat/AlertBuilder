@@ -42,44 +42,14 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         
         if indexPath.row == 0{
             let _ = AlertViewBuilder() { (builder) in
-                builder.addView(with: AlertSubTitleView.init(titleText: "Summary"), tag: 0, height: 50)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
-                builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                
-                builder.addViewWithAction(with: AlertSubMailView.init(mailText: "Send this receipt to my email address. (okan.yucel95@gmail.com)",image: "letter.png"), tag: 3, height: 73, action: {
+                builder.addView(with: AlertSubTitleView.init(titleText: "All Values"), tag: 0, height: 50)
+                for i in 0...30{
+                    builder.addView(with: AlertSubTextView.init(leftText: "Key \(i)", rightText: "Value \(i)"), tag: 3, height: 30)
+                }
+                builder.addViewWithAction(with: AlertSubMailView.init(mailText: "Send mail (okan.yucel95@gmail.com)",image: "letter.png"), tag: 3, height: 73, action: {
                     print("mail clicked")
                 })
-                builder.addButton(with: "OK", backgroundColor: .orange, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
+                builder.addButton(with: "OK", backgroundColor: .purple, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
                     print("OK clicked")
                 })
                 builder.addButton(with: "Cancel", backgroundColor: .lightGray, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
@@ -92,7 +62,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 builder.addView(with: AlertSubTitleView.init(titleText: "Error"), tag: 0, height: 50)
                 builder.addView(with: AlertSubMessageView.init(messageText: "Error with message"), tag: 0, height: 40)
                 
-                builder.addButton(with: "OK", backgroundColor: .orange, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
+                builder.addButton(with: "OK", backgroundColor: .purple, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
                     
                     
                     let _ = AlertViewBuilder() { (builder) in
@@ -102,14 +72,13 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                         
                         builder.addView(with: imageView, tag: 0, height: 50)
                         builder.addView(with: AlertSubMessageView.init(messageText: "Message with image"), tag: 0, height: 40)
-                        builder.addView(with: AlertSubTextView.init(leftText: "Value", rightText: "70 EURO"), tag: 3, height: 30)
-                        builder.addView(with: AlertSubTextView.init(leftText: "Sender Account", rightText: "401003485CLPECFEURON"), tag: 1, height: 30)
-                        builder.addView(with: AlertSubTextView.init(leftText: "Benef Account", rightText: "401003485CLPECFEURON"), tag: 2, height: 30)
-                        builder.addView(with: AlertSubTextView.init(leftText: "Value Date", rightText: "16.04.2018"), tag: 3, height: 30)
+                        for i in 0...4{
+                            builder.addView(with: AlertSubTextView.init(leftText: "Key \(i)", rightText: "Value \(i)"), tag: 3, height: 30)
+                        }
                         builder.addButton(with: "Button 1", backgroundColor: .black, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
                             print("Button 1 clicked")
                         })
-                        builder.addButton(with: "Button 2", backgroundColor: .orange, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
+                        builder.addButton(with: "Button 2", backgroundColor: .purple, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
                             print("Button 2 clicked")
                         })
                         builder.addButton(with: "Button 3", backgroundColor: .white, titleColor: .black, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
@@ -130,20 +99,13 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 
                 builder.addView(with: imageView, tag: 0, height: 50)
                 builder.addView(with: AlertSubMessageView.init(messageText: "Message with image"), tag: 134, height: 40)
-                
-                builder.addButton(with: "Button 1", backgroundColor: .black, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
-                    print("Button 1 clicked")
-                })
-                builder.addButton(with: "Button 2", backgroundColor: .orange, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
-                    print("Button 2 clicked")
-                })
-                builder.addButton(with: "Button 3", backgroundColor: .white, titleColor: .black, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
-                    print("Button 3 clicked")
-                })
-                builder.addButton(with: "Button 4", backgroundColor: .purple, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
-                    print("Button 4 clicked")
-                    
-                })
+                for i in 0...3{
+                    builder.addButton(with: "Button \(i)", backgroundColor: .purple, titleColor: .white, font: UIFont.systemFont(ofSize: 15), height: 40, action: {
+                        print("Button \(i) clicked")
+                        
+                    })
+                }
+        
                 }.build()
             
             

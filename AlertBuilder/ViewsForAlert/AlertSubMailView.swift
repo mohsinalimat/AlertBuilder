@@ -30,7 +30,7 @@ class AlertSubMailView: UIView {
         self.mLabelMessage.font = UIFont.systemFont(ofSize: 14)
         self.mLabelMessage.textColor = UIColor.darkText
         
-        mSwitchMail.onTintColor = .orange
+        mSwitchMail.onTintColor = .purple
         mSwitchMail.thumbTintColor = .lightGray
         mSwitchMail.tintColor = .lightGray
         mSwitchMail.backgroundColor = .clear
